@@ -1,0 +1,9 @@
+In order to say "Hello World" 
+<script>
+`Vue.createApp({
+data() {
+return {
+greeting: "Hello World"
+
+
+the code "Data" will absorb the number of letters in the String of the word
