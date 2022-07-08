@@ -1,0 +1,28 @@
+//App Button
+export default{
+    template:
+    <button>
+         :class= "{
+            'border roundeed px-5 py-2 disable:cursor-not-allowed : true',
+            "bg-blue-200 hover:bg-blue-400: type is 'primary",
+            "bg-purple-200 hover:bg-purple-400: type is 'secondary",
+            "bg-gray-200 hover:bg-gray-400: type is  'muted",
+            'is-loading: processing"
+        }"
+        :disabled = "processing"
+    
+        </button>
+    ,
+
+    props:{
+        type:{
+            type:String,
+            default: 'primary'
+        },
+   
+        processing:{
+            type: Boolean,
+            default: false
+        }
+    }
+    }    
