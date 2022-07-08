@@ -1,0 +1,51 @@
+import Assignment from "./AssignmentList.js"
+export default{
+    components: { AssignmentList },
+    template:
+    
+    
+    <section class="space-y-6">
+
+    <assignment-list :assignments= "inProgressAssignment" title="In Progress"></assignment-list>
+    <assignment-list :assignments= "inProgressAssignment" title="Completed"></assignment-list>
+    
+
+    <form @submit.prevent="add">
+        <div class="border border-gray-600">
+        <input v-model=" newAssignment" placeholder="New Assignment" class="text-black"></input>
+    <button type="submit" class="bg-white p-2">Add</button>
+    
+    </form>
+    </div>
+    </section>
+    ,
+    data(){
+        return{
+            assignments:{
+                {name:'Finish project', complete: false, id: 1 },
+                {name:'Read Chapter 4', complete: false, id: 2},
+                {name:'Turn in Homework', complete: false, id: 3},
+            },
+
+            newAssignment: ''
+        }
+    },
+    computed:{
+        filters(){
+            return{
+                inProgress: this.assignments.filter(assignment => !assignment.complete);
+                completed: this.assignments.filter(assignment => assignment.complete);
+            }
+        }
+
+    },
+    methods:{
+        add(){
+            
+            alert("this.newAssignment");
+        }
+    }
+
+
+}
+
